@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <!-- <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css"> -->
+
+
+    <!-- Main css -->
+    <!-- <link rel="stylesheet" href="/assets/css/signInstyle.css"> -->
+   
+</head>
+<body>
+
+    <div class="main">
+
+      
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+
+                    <div class="signin-image">
+                        <figure><img src="/assets/signin-image.jpg" alt="sing in image"></figure>
+                    </div>
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign In</h2>
+                        <form #createEngineerSignInForm="ngForm" novalidate>
+                            <div class="form-group">
+                                <input type="text" name="engineerId" class="form-control" 
+                                        placeholder="engineerId" required  
+                                        #engineerId="ngModel"
+                                        [(ngModel)]= "engineer.engineerId"
+                                        [ngClass]= "{'is-invalid':engineerId?.errors && (engineerId?.touched || engineerId?.dirty),
+                                                        'is-valid':engineerId?.valid}">
+                                <div class="invalid-feedback">
+                                    <strong *ngIf= "engineerId?.errors?.required">Engineer Id is required</strong>
+                                    <!-- <strong *ngIf= "productModelNumber?.errors && (productModelNumber?.touched || productModelNumber?.dirty) ">Title is not valid</strong> -->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" 
+                                      placeholder="password" 
+                                      required [(ngModel)]= "engineer.password" #password="ngModel"
+                                      [ngClass]= "{'is-invalid':password?.errors && (password?.touched || password?.dirty),
+                                      'is-valid':password?.valid}">
+                                      <div class="invalid-feedback">
+                                        <strong *ngIf= "password?.errors?.required">Password is required</strong>
+                                    </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success" (click)= "onSubmit()" [disabled]= "createEngineerSignInForm.invalid">Login</button>
+                           
+                        </form>
+                      
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

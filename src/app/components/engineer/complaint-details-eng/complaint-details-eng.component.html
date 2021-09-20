@@ -1,0 +1,106 @@
+<!-- <div class="nav">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+         <a class="navbar-brand" href="#">Welcome to</a> 
+        <div class="logo float-left">
+            <h1 class="text-light"><span>ABC Electronics</span></h1>
+          </div>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" id="clientHome" (click)="goToEngineerHomePage()">Home<span class="sr-only">(current)</span></a>
+                </li>
+             
+            </ul>
+            <li class="nav-item">
+                <button type="button" (click)="goToEngineerHomePage()" class="btn btn-warning" style="margin-left:15px"> <a href = ''>Log Out</a></button>
+            </li>
+        </div>
+    </nav>
+</div>
+<h2>Complaint Details</h2>
+<hr>
+<div *ngIf = "complaint">
+    <div>
+        <label> <b> ComplaintId : </b></label> {{complaint.complaintId}}
+    </div>
+    <div>
+        <label> <b> Product Model Number : </b></label> {{complaint.productModelNumber}}
+    </div>
+    <div>
+        <label> <b> Complaint Description : </b></label> {{complaint. complaintName}}
+    </div>
+    <div>
+        <label> <b> Complaint Status : </b></label> {{complaint.status}}
+    </div>
+    <div>
+        <label> <b> Client Id : </b></label> {{complaint.clientId}}
+    </div>
+    <div>
+        <label> <b> Engineer Id : </b></label> {{complaint.engineerId}}
+    </div>
+    <div>
+        <label> <b> Complaint Regestration date : </b></label> {{complaint.complaintRegDate}}
+    </div>
+    <div>
+        <label> <b> Maximum date to resolve : </b></label> {{complaint.maximumDateToResolve}}
+    </div>
+</div> -->
+
+<div class="nav">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+         <a class="navbar-brand" href="#">Welcome to</a> 
+        <div class="logo float-left">
+            <h1 class="text-light"><span>ABC Electronics</span></h1>
+          </div>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <!-- <li class="nav-item active">
+                    <a class="nav-link" id="clientHome" >Home<span class="sr-only">(current)</span></a>
+                </li> -->
+            </ul>
+            <li class="nav-item">
+                <button type="button"  (click)="goToHomePage()" class="btn btn-warning" style="margin-right:15px"> <a href = ''>Log Out</a></button>
+            </li>
+        </div>
+    </nav>
+</div>
+<div class="card-deck">
+    <div class="card">
+        <img class="card-img-top" src="/assets/complaint.jpg" alt="">
+        <div class="card-body">
+            <h4 class="card-title">Complaint Details</h4>
+            <hr>
+            <div *ngIf = "complaint">
+                <div>
+                    <label> <b> ComplaintId : </b></label> &nbsp;&nbsp;{{complaint.complaintId}}
+                </div>
+                <div>
+                    <label> <b> Product Model Number : </b></label> &nbsp;&nbsp;{{complaint.productModelNumber}}
+                </div>
+                <div>
+                    <label> <b> Complaint Description : </b></label>&nbsp;&nbsp; {{complaint. complaintName}}
+                </div>
+                <div>
+                    <label> <b> Complaint Status : </b></label> &nbsp;&nbsp;{{complaint.status}}
+                </div>
+                <div>
+                    <label> <b> Client Id : </b></label> &nbsp;&nbsp;{{complaint.clientId}}
+                </div>
+                <div>
+                    <label> <b> Engineer Id : </b></label>&nbsp;&nbsp; {{complaint.engineerId}}
+                </div>
+                <div>
+                    <label> <b> Complaint Regestration date : </b></label>&nbsp;&nbsp; {{complaint.complaintRegDate}}
+                </div>
+                <div>
+                    <label> <b> Maximum date to resolve : </b></label> &nbsp;&nbsp;{{complaint.maximumDateToResolve}}
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>

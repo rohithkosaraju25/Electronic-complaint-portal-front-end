@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ABC Electronics Complaint Portal - Home</title>
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+
+  <!-- Template Main CSS File -->
+  <!-- <link href="/assets/css/style.css" rel="stylesheet"> -->
+</head>
+
+ 
+
+<body>
+  <h2>Hii!!</h2>
+   <div *ngIf = "adminId" id="loginid">
+    <div>
+        <label><b> Admin Id : </b></label> {{adminId}}
+    </div>
+   </div> 
+  
+   <header id="header" class="fixed-top">
+    <div class="container">
+      <div class="logo float-left">
+        <h1 class="text-light"><span>ABC Electronics</span></h1>
+      </div>
+       <div>
+        <nav class="navbar navbar-expand-sm navbar-dark float-right" style="background-color: #1e4356;">
+          <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <button type="button" id="buttons" (click)="goToAdminHomePage()" class="btn btn" data-toggle="tooltip"
+                  data-placement="top" title="Go to Home" style="margin-left:15px"> <a href=''>Home</a></button>
+                <button type="button" id="buttons" (click)="goToAdminHomePage()" class="btn btn-warning" data-toggle="tooltip"
+                  data-placement="top" title="Log Out Of Portal" style="margin-left:15px"> <a href=''>Log
+                    Out</a></button>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
+      </div> 
+    </div>
+  </header> 
+
+  
+
+ 
+  <section>
+    <div class="row row-md-3">
+
+      <div class="row">
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type="submit" (click) = "goToAddEngineer()" class="btn btn-info">Add Engineer</button></h3>
+               <p class="card-text">Add The Engineer</p> 
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type = "submit" (click)="goToChangeDomain()" class="btn btn-info">Change Domain</button></h3>
+               <p class="card-text">Change Engineer Domain</p>
+            </div>
+          </div>
+        </div>
+
+         <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type = "submit" (click)="goToReplaceRequestComplaints()" class="btn btn-info">Replace Engineer</button></h3>
+               <p class="card-text">Request For Replacement Of Engineer</p> 
+             </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row row-md-3">
+
+      <div class="row">
+         <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info" (click)="goToAllEngineersComponent()">Remove Engineer</button></h3>
+               <p class="card-text">Remove Engineer Here</p> 
+             </div>
+          </div>
+        </div>  
+        
+
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info" (click)="goToGetComplaintsByProductcategoryComponent()">View Complaints By Product Category</button></h3>
+               <p class="card-text">View Product Complaints Here</p> 
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type = "submit" (click)="goToGetEngineersByProductCategoryName()" class="btn btn-info">View Engineers Details By Category</button></h3>
+               <p class="card-text">Get The Engineers Details Here</p> 
+             </div>
+          </div> 
+        </div> 
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row row-md-3">
+
+      <div class="row">
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type="submit" (click) = "goToAddProduct()" class="btn btn-info">Add Product</button></h3>
+               <p class="card-text">Add The Product</p> 
+            </div>
+          </div>
+        </div>
+
+         <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type = "submit" (click)="goToRemoveProducts()" class="btn btn-info">Remove Product</button></h3>
+               <p class="card-text">Remove Product Here</p>
+            </div>
+          </div>
+        </div> 
+
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type="submit" (click) = "goToGetProduct()" class="btn btn-info">View Product Details By Category</button></h3>
+               <p class="card-text">Search For Product</p> 
+            </div>
+          </div>
+        </div>
+
+          
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row row-md-3">
+
+      <div class="row">
+       
+
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type = "submit" (click)="goToFindProduct()" class="btn btn-info">View Product Details By Model Number</button></h3>
+               <p class="card-text">Get The Product Details Here</p> 
+             </div>
+          </div> 
+        </div> 
+    </div>
+  </div>
+  </section>
+
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home/service">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>About ABC Electronics</h3>
+            <p>Subscribe to our newsletter for the latest industry news, product updates, and promotions.</p>
+          
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>ABC Electronics</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,51 @@
+<!-- <p>get-client-by-client-id works!</p>
+<div class="nav">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark "> 
+        <div class="logo float-left">
+            <h1 class="text-light" style="font-size: 1rem;">Welcome to ABC Electronics</h1>
+          </div>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active ">
+                   <button type="submit"class="btn btn-warning" (click)="goToClientHomePage()" style="margin-left:650px">Home</button>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <li class="nav-item">
+                <button type="button" (click)="goToHomePage()" class="btn btn-warning" style="margin-left:15px"> <a href = ''>Log Out</a></button>
+            </li>
+        </div>
+    </nav>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Client Details</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-inverse table-responsive">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Client Id</th>
+                    <th>Client Address</th>
+                    <th>Client Phone Number</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor= "let client of clients">
+                        <td>{{client.clientId}}</td>
+                        <td>{{client.clientAddress}}</td>
+                        <td>{{client.phoneNumber}}</td>
+                        
+                        <td>
+                            <button (click)="findByClientId(client.clientId)" class="btn btn-info" >Details>></button>
+                        </td>
+                    </tr>
+                </tbody>
+        </table>
+    </div>
+</div> -->

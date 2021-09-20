@@ -1,0 +1,17 @@
+<!-- <div style="width:400px" >
+    <form #getclientForm="ngForm" novalidate>
+        <div class="form-group">
+            <input type="string" name="clientId" class="form-control" 
+                  placeholder="clientId" 
+                  required [(ngModel)]= "client.clientId" #clientId="ngModel"
+                  [ngClass]= "{'is-invalid':clientId?.errors && (clientId?.touched || clientId?.dirty),
+                  'is-valid':clientId?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "clientId?.errors?.required">Client Id is required</strong>
+                </div>
+        </div>
+        
+        <button type="submit" class="btn btn-success" (click)= "onSubmit()" [disabled]= "getclientForm.invalid">Client Details</button>
+       
+    </form>
+</div> -->

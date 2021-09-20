@@ -1,0 +1,59 @@
+
+<div class="nav">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+         <a class="navbar-brand" href="#">Welcome to</a> 
+        <div class="logo float-left">
+            <h1 class="text-light"><span>ABC Electronics</span></h1>
+          </div>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <!-- <button type="button" class="btn btn-warning" style="margin-left:400px;"><a href="client/clientHome">HOME</a></button> -->
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <button type="button" class="btn btn-warning" style="margin-left:400px;"><a href="client/clientHome">HOME</a></button>"
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <li class="nav-item">
+                <button type="button" (click)="goToHomePage()" class="btn btn-warning" style="margin-left:15px"> <a href = ''>Log Out</a></button>
+            </li>
+        </div>
+    </nav>
+</div>
+
+
+<div class="card-deck">
+    <div class="card">
+        <img class="card-img-top" src="/assets/product.jpg" alt="">
+        <div class="card-body">
+            <h4 class="card-title">Product Details</h4>
+            <hr>
+            <div *ngIf = "product">
+                <div>
+                    <label> <b> client Id : </b></label>&nbsp;&nbsp; {{product.clientId}}
+                </div>
+                <div>
+                    <label> <b>Product Model Number : </b></label>&nbsp;&nbsp; {{product.modelNumber}}
+                </div>
+                <div>
+                    <label> <b> Product Name : </b></label> &nbsp;&nbsp;{{product.productName}}
+                </div>
+                <div>
+                    <label> <b> Product Category Name : </b></label>&nbsp;&nbsp; {{product.productCategoryName}}
+                </div>
+                <div>
+                    <label> <b> Date of Purchase : </b></label> &nbsp;&nbsp;{{product.dateofPurchase}}
+                </div>
+                <div>
+                    <label> <b> Warranty Years : </b></label>&nbsp;&nbsp; {{product.warrantyYears}}
+                </div>
+                <div>
+                    <label> <b> Warranty Date : </b></label> &nbsp;&nbsp;{{product.warrantyDate}}
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>

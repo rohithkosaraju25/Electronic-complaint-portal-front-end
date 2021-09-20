@@ -1,0 +1,48 @@
+label {
+    padding-top: 15px;
+}
+
+form{
+    color:cadetblue;
+    font-size: larger;
+    margin-left:2pc;
+}
+
+input[type=text] {
+    width: 500px;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    box-decoration-break:inherit;
+    border-width: 4px;
+    border-color: burlywood;
+  }
+  input[type=number] {
+    width: 500px;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    box-decoration-break:inherit;
+    border-width: 4px;
+    border-color: burlywood;
+  }
+
+  .btn  {
+
+    border-radius: 4px;
+    font-size: 28px;
+    margin: 5px;
+    text-align: center;
+    
+  }  
+
+  p{
+    margin-left:2pc;
+    margin-top: 2pc;
+  }
+
+  #changeDomain{
+    font-size:larger;
+    color:black;
+    font-weight: bolder;
+  }

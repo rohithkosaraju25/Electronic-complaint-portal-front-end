@@ -1,0 +1,64 @@
+form {
+    margin-left: 30px;
+    
+  }
+  
+  input {
+    width: 200%;
+  }
+
+  input[type=text] {
+    width: 200%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    box-decoration-break:inherit;
+    border-width: 4px;
+    border-color: burlywood;
+  }
+
+  input[type=date] {
+    width: 200%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    box-decoration-break:inherit;
+    border-width: 4px;
+    border-color: burlywood;
+  }
+
+  /* input[type=submit] {
+    width: 100%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    box-decoration-break:inherit;
+    
+  }
+  input[type=reset] {
+    width: 100%;
+    padding: 8px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    box-decoration-break:inherit;
+    color: antiquewhite;
+  } */
+
+  .btn  {
+
+    border-radius: 4px;
+    font-size: 28px;
+    margin: 5px;
+    text-align: center;
+    
+  }  
+
+  label {
+    font-weight: bold;
+  }
+
+  h3{
+      color: darkblue;
+      margin-left: 30px;
+      margin-bottom: 10px;
+  }

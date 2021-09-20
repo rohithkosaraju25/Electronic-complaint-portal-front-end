@@ -1,0 +1,55 @@
+.container {
+    position: relative;
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+label
+{
+    padding-left: 10px;
+    color:crimson;
+    font-weight: bolder;
+}
+
+img{
+    height: 10pc;
+    width:20pc;
+    margin-top: 1pc;
+}
+
+.card-deck{
+    margin-top: 40px;
+    padding-left: 60px;;
+     width:40%;
+     height:25pc;
+     text-align: left;
+
+}
+
+.card{
+    border-width: 10px;
+    border-color: black;
+}
+
+hr{
+   
+    border-color: black;
+    border-width: 10px;
+   
+}
+
+nav{
+    width:100%;
+  }
+
+  #clientHome{
+    margin-left: 39pc;
+}

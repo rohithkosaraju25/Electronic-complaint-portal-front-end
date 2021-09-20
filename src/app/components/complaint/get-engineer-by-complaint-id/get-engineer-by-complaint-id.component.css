@@ -1,0 +1,56 @@
+label
+{
+    padding-left: 10px;
+    color:crimson;
+    font-weight: bolder;
+    margin-left:9pc;
+}
+
+img{
+    height: 100px;
+    width:100px;
+    margin-left: 3pc;
+    align-self: center;
+}
+
+.card-deck{
+    margin-top: 40px;
+    padding-left: 40px;;
+     width:40%;
+     height:30pc;
+     text-align: left;
+
+}
+
+hr{
+    margin-top:4pc;
+    border-color: black;
+    border-width: 10px;
+   
+}
+
+h4{
+    margin-left:10pc;
+}
+
+b{
+    padding-top: 70pc;
+    font-size: larger;
+}
+
+#details{
+    margin-top:4pc;
+}
+
+.card{
+    border-width: 10px;
+    border-color: black;
+}
+
+nav{
+    width:100%;
+  }
+
+  #clientHome{
+    margin-left: 39pc;
+}

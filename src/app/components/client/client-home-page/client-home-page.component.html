@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ABC Electronics Complaint Portal - Home</title>
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+
+  <!-- Template Main CSS File -->
+  <!-- <link href="/assets/css/style.css" rel="stylesheet"> -->
+</head>
+
+<body>
+  <header id="header" class="fixed-top">
+    <div class="container">
+      <div class="logo float-left">
+        <h1 class="text-light"><span>ABC Electronics</span></h1>
+      </div>
+      <div>
+        <nav class="navbar navbar-expand-sm navbar-dark float-right" style="background-color: #1e4356;">
+          <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <button type="button" (click)="goTobookComplaint()" class="btn btn-secondary" data-toggle="tooltip"
+                  data-placement="top" title="Book a Complaint" style="margin-left:15px">Book Complaint</button>
+              </li>
+              <li class="nav-item">
+                <button type="button" (click)="goToAllComplaints()" class="btn btn-info" data-toggle="tooltip"
+                  data-placement="top" title="View All Your Complaints" style="margin-left:15px">View
+                  All Complaints</button>
+              </li>
+              <li class="nav-item">
+                <button type="button" (click)="goToActiveComplaints()" class="btn btn-info" data-toggle="tooltip"
+                  data-placement="top" title="View Your Active Complaints" style="margin-left:15px">View All Active
+                  Complaints</button>
+              </li>
+              <li class="nav-item">
+                <button type="button" (click)="goToAllproducts()" class="btn btn-info" data-toggle="tooltip"
+                  data-placement="top" title="View Your Products" style="margin-left:15px">View
+                  Products</button>
+              </li>
+              <li class="nav-item">
+                <!-- <button type="button" *ngIf="goToHomePage"  (click)="goToHomePage()" class="btn btn-warning" data-toggle="tooltip"
+                  data-placement="top" title="Log Out Of Portal" style="margin-left:15px"> <a href=''>Log
+                    Out</a></button> -->
+                    <a *ngIf="goToHomePage" routerLink="/logout" class="nav-link">Logout</a>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <section>
+    <div>
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-inner row-md-3 w-100 mx-auto">
+          <div class="carousel-item" *ngFor="let product of products;let index = index;let isFirst = first"
+            [ngClass]="{active:isFirst}">
+            <div class="col-md-12 my-4">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col-auto d-none d-lg-block">
+                  <img class="img1" src="/assets/yourproducts.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="col p-4 d-flex flex-column position-static my-5">
+
+                  <h4 class="card-title" style="margin-left:150px ;">Product</h4>
+                  <p class="card-text" style="margin-left:150px ;"><b>ModelNumber :</b>&nbsp;&nbsp;{{products[index].modelNumber}}
+                  </p>
+                  <p class="card-text" style="margin-left:150px ;"><b>Product Name :</b>&nbsp;&nbsp;{{products[index].productName}}
+                  </p>
+                  <p class="card-text" style="margin-left:150px ;"><b>Warranty Date
+                      :</b>&nbsp;&nbsp;{{products[index].warrantyDate}}</p>
+                  <div class="col-md-2">
+                    <button id="detail" (click)="productDetails(product.modelNumber)" class="btn btn-info"
+                      style="margin-left:150px ; text-align : right;"> Details</button>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <!---->
+            <!---->
+            <!---->
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div> 
+  </section>
+  <hr>
+  <hr>
+  <br>
+  <br>
+
+
+
+  <section>
+    <div>
+      <div id="carouselExampleCaptions2" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions2" *ngFor="let complaint of complaints;let index = index"
+            [attr.data-slide-to]="index"></li>
+        </ol>
+        <div class="carousel-inner row-md-1 w-100 mx-auto">
+          <div class="carousel-item" *ngFor="let complaint of complaints;let index = index;let isFirst = first"
+            [ngClass]="{active:isFirst}">
+            <div class="col-md-12 my-4">
+              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col-auto d-none d-lg-block">
+                  <img class="img-fluid"  id="im2" src="/assets/complaints.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="col p-4 d-flex flex-column position-static my-5">
+
+                  <h4 class="card-title" style="margin-left:150px ;">Complaint</h4>
+                  <p class="card-text" style="margin-left:150px ;"><b>Complaint Id: </b>&nbsp;&nbsp;{{complaint.complaintId}}
+                  </p>
+                  <p class="card-text" style="margin-left:150px ;"><b>Complaint Name: </b>&nbsp;&nbsp;{{complaint.complaintName}}
+                  </p>
+                  <p class="card-text" style="margin-left:150px ;"><b>Status: 
+                      </b>&nbsp;&nbsp;{{complaint.status}}</p>
+                  <div class="col-md-2">
+                    <button id="detail" (click)="complaintDetails(complaint.complaintId)" class="btn btn-info"
+                      style="margin-left:150px ; text-align : right;"> Details</button>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+ 
+  <section>
+    <div class="row row-md-3">
+
+      <div class="row">
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type="submit" (click) = "goToClientDetails()" class="btn btn-info">View Profile</button></h3>
+              <p class="card-text">Check your Details here</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type = "submit" (click)="goToAllOpenComplaints()" class="btn btn-info">View Open Complaints</button></h3>
+              <p class="card-text">Check your Open Complaints here</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button type = "submit" (click)="goToRequestComplaints()" class="btn btn-info">Replace Engineer</button></h3>
+              <p class="card-text">Request for replacement of engineer here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row row-md-3">
+
+      <div class="row">
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info" (click)="goToRequestStatus()">Replace Request Status</button></h3>
+              <p class="card-text">Track replace engineer request status here</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info" (click)="goToonGoingComplaints()" >View on going Complaints</button></h3>
+              <p class="card-text">Check your on going Complaints here</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-1-12">
+          <div class="card" style="width: 29rem;">
+            <div class="card-body">
+              <h3 class="card-title"><button class="btn btn-info" (click)="goToResolvedComplaints()">View Resolved Complaints</button></h3>
+              <p class="card-text">View your resolved complaints here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home/service">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>About ABC Electronics</h3>
+            <p>Subscribe to our newsletter for the latest industry news, product updates, and promotions.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>ABC Electronics</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

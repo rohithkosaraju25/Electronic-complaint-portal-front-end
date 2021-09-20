@@ -1,0 +1,62 @@
+
+
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+<h3>Book Complaint</h3>
+<div style="width:400px" [hidden]= "submitted">
+    <!-- <form (ngSubmit)="onSubmit()"> -->
+    <form #createComplaintForm="ngForm" novalidate>
+        <div class="form-group">
+            <label for="productModelNumber">Product Model Number</label>
+            <input type="text" name="productModelNumber" class="form-control" 
+                    placeholder="Enter the product model number" required  
+                    #productModelNumber="ngModel"
+                    [(ngModel)]= "complaint.productModelNumber"
+                    [ngClass]= "{'is-invalid':productModelNumber?.errors && (productModelNumber?.touched ),
+                                    'is-valid':productModelNumber?.valid}">
+            <div class="invalid-feedback">
+                <strong *ngIf= "productModelNumber?.errors?.required">Product Model Number is required</strong>
+                <!-- <strong *ngIf= "productModelNumber?.errors && (productModelNumber?.touched || productModelNumber?.dirty) ">Title is not valid</strong> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="complaintName">Complaint Description</label>
+            <input type="text" name="complaintName" class="form-control" 
+                  placeholder="Enter the details of complaint" 
+                  required [(ngModel)]= "complaint.complaintName" #complaintName="ngModel"
+                  [ngClass]= "{'is-invalid':complaintName?.errors && (complaintName?.touched || complaintName?.dirty),
+                  'is-valid':complaintName?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "complaintName?.errors?.required">Complaint Description is required</strong>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="clientId">Client Id</label>
+            <input type="text" name="clientId" class="form-control" 
+                  placeholder="Enter the Client Id" required 
+                  [(ngModel)]= "complaint.clientId" #clientId="ngModel"
+                  [ngClass]= "{'is-invalid':clientId?.errors && (clientId?.touched || clientId?.dirty),
+                  'is-valid':clientId?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "clientId?.errors?.required">Client Id is required</strong>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="complaintRegDate">Complaint Registration Date</label>
+            <input type="date" name="complaintRegDate" class="form-control" 
+                  placeholder="Enter the complaint registration date" required 
+                  [(ngModel)]= "complaint.complaintRegDate" #complaintRegDate="ngModel"
+                  [ngClass]= "{'is-invalid':complaintRegDate?.errors && (complaintRegDate?.touched || complaintRegDate?.dirty),
+                  'is-valid':complaintRegDate?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "complaintRegDate?.errors?.required">complaintRegDate is required</strong>
+                </div>
+        </div>
+        <button type="submit" class="btn btn-success" (click)= "onSubmit()" [disabled]= "createComplaintForm.invalid">Book Complaint</button>
+        <button type="reset" class="btn btn-default" (click)= "createComplaintForm.reset()">Reset</button>
+    </form>
+    </div>
+    </div>
+    </div>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Main css -->
+   
+</head>
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                
+                        <!-- <form method="POST" class="register-form" id="register-form">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                            </div>
+                        </form> -->
+                        <div class="signin-form">
+                            <h2 class="form-title">Sign Up</h2>
+                            <form #createClientSignupForm="ngForm" novalidate>
+                                <div class="form-group">
+                                    <input type="text" name="clientId" class="form-control" 
+                                            placeholder="clientId" required  
+                                            #clientId="ngModel"
+                                            [(ngModel)]= "client.clientId"
+                                            [ngClass]= "{'is-invalid':clientId?.errors && (clientId?.touched || clientId?.dirty),
+                                                            'is-valid':clientId?.valid}">
+                                    <div class="invalid-feedback">
+                                        <strong *ngIf= "clientId?.errors?.required">clientId is required</strong>
+                                        <!-- <strong *ngIf= "productModelNumber?.errors && (productModelNumber?.touched || productModelNumber?.dirty) ">Title is not valid</strong> -->
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="text" name="address" class="form-control" 
+                                          placeholder="address" 
+                                          required [(ngModel)]= "client.address" #address="ngModel"
+                                          [ngClass]= "{'is-invalid':address?.errors && (address?.touched || address?.dirty),
+                                          'is-valid':address?.valid}">
+                                          <div class="invalid-feedback">
+                                            <strong *ngIf= "address?.errors?.required">Address is required</strong>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" name="phoneNumber" class="form-control" 
+                                          placeholder="Phone Number" 
+                                          required [(ngModel)]= "client.phoneNumber" #phoneNumber="ngModel"
+                                          [ngClass]= "{'is-invalid':phoneNumber?.errors && (phoneNumber?.touched || phoneNumber?.dirty),
+                                          'is-valid':phoneNumber?.valid}">
+                                          <div class="invalid-feedback">
+                                            <strong *ngIf= "phoneNumber?.errors?.required">Phone Number is required</strong>
+                                            <div *ngIf="f?.phoneNumber?.errors?.pattern || f?.phoneNumber?.errors?.maxlength || f?.phoneNumber?.errors?.minlength">Phone number must be at least 10 numbers</div>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control" 
+                                          placeholder="password" 
+                                          required [(ngModel)]= "client.password" #password="ngModel"
+                                          [ngClass]= "{'is-invalid':password?.errors && (password?.touched || password?.dirty),
+                                          'is-valid':password?.valid}">
+                                          <div class="invalid-feedback">
+                                            <strong *ngIf= "password?.errors?.required">Password is required</strong>
+                                        </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <input type="password" name="password" class="form-control" 
+                                          placeholder="password" 
+                                          required [(ngModel)]= "client.password" #password="ngModel"
+                                          [ngClass]= "{'is-invalid':password?.errors && (password?.touched || password?.dirty),
+                                          'is-valid':password?.valid}">
+                                          <div class="invalid-feedback">
+                                            <strong *ngIf= "password?.errors?.required">Password is required</strong>
+                                        </div>
+                                </div> -->
+                                
+                                <button type="submit" class="btn btn-success" (click)= "onSubmit()" [disabled]= "createClientSignupForm.invalid"><a href="client/clientLogin">Register as Client</a></button>
+                               
+                            </form>
+                          
+                        </div>
+                
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="/assets/signup-image.jpg" alt="sing up image"></figure>
+                        <a href="client/clientLogin" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+      
+ 
+        </section>
+    </div>
+        
+    <!-- JS -->
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

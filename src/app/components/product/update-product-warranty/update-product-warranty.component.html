@@ -1,0 +1,30 @@
+
+<div style="width:400px" [hidden]= "submitted">
+  <form #createProductForm="ngForm" novalidate>
+
+      <!-- <div class="form-group">
+        <input type="modelNumber" name="modelNumber" class="form-control" 
+              placeholder="modelNumber" 
+              required [(ngModel)]= "product.modelNumber" #modelNumber="ngModel"
+              [ngClass]= "{'is-invalid':modelNumber?.errors && (modelNumber?.touched || modelNumber?.dirty),
+              'is-valid':modelNumber?.valid}">
+              <div class="invalid-feedback">
+                <strong *ngIf= "modelNumber?.errors?.required">product model number is required</strong>
+              </div>
+      </div>  -->
+      <div class="form-group">
+        <label for="warrantyYears">New Warranty Years</label>
+        <input type="text" name="warrantyYears" class="form-control" 
+              placeholder="Enter the new warranty years" 
+              required [(ngModel)]= "product.warrantyYears" #warrantyYears="ngModel"
+              [ngClass]= "{'is-invalid':warrantyYears?.errors && (warrantyYears?.touched || warrantyYears?.dirty),
+              'is-valid':warrantyYears?.valid}">
+              <div class="invalid-feedback">
+                <strong *ngIf= "warrantyYears?.errors?.required">warranty years is required</strong>
+              </div>
+      </div>
+    <button type="submit" class="btn btn-success" (click)= "submit(product.warrantyYears)"  [disabled]= "createProductForm.invalid">Submit</button>
+    <button type="submit" class="btn btn-default" (click)= "createProductForm.reset()">Reset</button>
+  </form>
+</div>
+

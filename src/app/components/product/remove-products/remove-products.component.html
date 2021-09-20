@@ -1,0 +1,17 @@
+
+<div style="width:400px" >
+  <form #getproductForm="ngForm" novalidate>
+      <div class="form-group">
+          <input type="text" name="productCategoryName" class="form-control" 
+                placeholder="productCategoryName" 
+                required [(ngModel)]= "product.productCategoryName" #productCategoryName="ngModel"
+                [ngClass]= "{'is-invalid':productCategoryName?.errors && (productCategoryName?.touched || productCategoryName?.dirty),
+                'is-valid':productCategoryName?.valid}">
+                <div class="invalid-feedback">
+                  <strong *ngIf= "productCategoryName?.errors?.required">product Category Name is required</strong>
+              </div>
+      </div>
+      <button type="submit" class="btn btn-success" (click)= "removeProducts(product.productCategoryName)" [disabled]= "getproductForm.invalid">Submit</button>
+     
+  </form>
+</div>

@@ -1,0 +1,29 @@
+
+<p style="color:rgb(185, 102, 54);"><strong>WELCOME!</strong></p>
+<p id="changeDomain">Change-domain</p>
+<form #changeDomainForm="ngForm" novalidate>
+  <div class="form-group">
+      <input type="number" name="engineerId" class="form-control" 
+              placeholder="engineerId" required  
+              #engineerId="ngModel"
+              [(ngModel)]= "engineer.engineerId"
+              [ngClass]= "{'is-invalid':engineerId?.errors && (engineerId?.touched || engineerId?.dirty),
+                              'is-valid':engineerId?.valid}">
+      <div class="invalid-feedback">
+          <strong *ngIf= "engineerId?.errors?.required">engineerId is required</strong>
+      </div>
+  </div>
+  <div class="form-group">
+      <input type="text" name="domain" class="form-control" 
+            placeholder="domain" 
+            required [(ngModel)]= "engineer.domain" #domain="ngModel"
+            [ngClass]= "{'is-invalid':domain?.errors && (domain?.touched || domain?.dirty),
+            'is-valid':domain?.valid}">
+            <div class="invalid-feedback">
+              <strong *ngIf= "domain?.errors?.required">domain is required</strong>
+          </div>
+  </div>
+  
+  <button type="submit" class="btn btn-success" (click)= "submit()" [disabled]= "changeDomainForm.invalid">Submit</button>
+ 
+</form>

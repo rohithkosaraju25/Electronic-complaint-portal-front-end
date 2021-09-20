@@ -1,0 +1,56 @@
+<div class="nav">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+         <a class="navbar-brand" href="#">Welcome to</a> 
+        <div class="logo float-left">
+            <h1 class="text-light"><span>ABC Electronics</span></h1>
+          </div>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" id="clientHome"  (click)="goToClientHomePage()" style="margin-left: 450px;" >Home<span class="sr-only">(current)</span></a>
+                </li>
+               <!--  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                    </div>
+                </li> -->
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <li class="nav-item">
+                <button type="button" (click)="goToHomePage()" class="btn btn-warning" style="margin-left:15px"> <a href = ''>Log Out</a></button>
+            </li>
+        </div>
+    </nav>
+</div>
+
+<div class="card-deck">
+    <div class="card">
+        <img class="card-img-top" src="/assets/engineer.jpg" alt="">
+        <div class="card-body">
+            <h4 class="card-title">Engineer Details</h4>
+            <hr>
+            <div *ngIf = "engineer">
+                <div id="details">
+                    <label> <b> Engineer Id : </b></label>&nbsp;&nbsp;  {{engineer.engineerId}}
+                </div>
+                <div>
+                    <label> <b> Engineer Name : </b></label> &nbsp;&nbsp;{{engineer.engineerName}}
+                </div>
+                <div>
+                    <label> <b> Engineer Domain : </b></label>&nbsp;&nbsp; {{engineer.domain}}
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>

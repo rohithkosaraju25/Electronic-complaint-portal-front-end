@@ -1,0 +1,18 @@
+
+<div style="width:400px" >
+    <form #findProductForm="ngForm" novalidate>
+        <div class="form-group">
+            <input type="text" name="modelNumber" class="form-control" 
+                  placeholder="modelNumber" 
+                  required [(ngModel)]= "product.modelNumber" #modelNumber="ngModel"
+                  [ngClass]= "{'is-invalid':modelNumber?.errors && (modelNumber?.touched || modelNumber?.dirty),
+                  'is-valid':modelNumber?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "modelNumber?.errors?.required">product model number is required</strong>
+                </div>
+        </div>
+        
+        <button type="submit" class="btn btn-success" (click)= "onSubmit()" [disabled]= "findProductForm.invalid">Search</button>
+       
+    </form>
+</div>

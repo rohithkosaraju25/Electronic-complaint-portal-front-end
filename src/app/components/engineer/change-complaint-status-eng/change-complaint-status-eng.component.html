@@ -1,0 +1,34 @@
+
+
+<div class="nav">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+         <a class="navbar-brand" href="#">Welcome to</a> 
+        <div class="logo float-left">
+            <h1 class="text-light"><span>ABC Electronics</span></h1>
+          </div>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" style="margin-left: 940px;" id="clientHome" (click)="goToEngineerHomePage()">Home<span class="sr-only">(current)</span></a>
+                </li>
+             
+            </ul>
+            <li class="nav-item">
+                <button type="button" (click)="goToEngineerHomePage()" class="btn btn-warning" style="margin-left:15px"> <a href = ''>Log Out</a></button>
+            </li>
+        </div>
+    </nav>
+</div>
+<div style="width:400px" >
+      <form [formGroup] = "changeStatusForm" (ngSubmit)="submit()" >
+        <div class="form-group" >
+          <label for="status">Change Status:</label>
+          <select formControlName="status" class="form-control" >
+              <option *ngFor="let status of statusList" [ngValue] = "status">{{status}}</option>
+          </select>
+        </div>
+      <button type="submit" class="btn btn-success" >Change Status</button>
+  </form>
+  </div>

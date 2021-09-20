@@ -1,0 +1,44 @@
+<div class="nav">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+         <a class="navbar-brand" href="#">Welcome to</a> 
+        <div class="logo float-left">
+            <h1 class="text-light"><span>ABC Electronics</span></h1>
+          </div>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" style="margin-left: 940px;" href="engineer/engineerHome" (click)="goToEngineerHomePage()">Home<span class="sr-only">(current)</span></a>
+                </li>
+             
+            </ul>
+            <li class="nav-item">
+                <button type="button" (click)="goToEngineerHomePage()" class="btn btn-warning" style="margin-left:15px"> <a href = ''>Log Out</a></button>
+            </li>
+        </div>
+    </nav>
+</div>
+<hr>
+
+<div style="text-align: center;">
+<div style="width:400px"  >
+    
+    <form #getStatusForm="ngForm" novalidate>
+        <div class="form-group"  style="text-align: center;" >
+            <input type="text" name="status" class="form-control" 
+                  placeholder="status" 
+                  required [(ngModel)]= "complaint.status" #status="ngModel"
+                  [ngClass]= "{'is-invalid':status?.errors && (status?.touched || status?.dirty),
+                  'is-valid':status?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "status?.errors?.required">Status is required</strong>
+                </div>
+        </div>
+        <button type="submit" class="btn btn-success" (click)= "goToGetComplaintsByStatus(complaint.status)" [disabled]= "getStatusForm.invalid">Submit</button>
+        <button type="submit" class="btn btn-default" (click)= "getStatusForm.reset()">Reset</button>
+
+    </form>
+</div>
+  </div>
+

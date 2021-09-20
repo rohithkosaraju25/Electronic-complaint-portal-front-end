@@ -1,0 +1,54 @@
+
+<p style="color:rgb(185, 102, 54);"><strong>WELCOME!</strong></p>
+<h3>Add Engineer</h3>
+<div style="width:400px" [hidden]= "submitted">
+     
+        <form #addengineerForm="ngForm" novalidate>
+        <div class="form-group">
+            <label for="engineerId">Engineer Id</label>
+            <input type="text" name="engineerId" class="form-control" 
+                    placeholder="Enter the engineer Id" required  
+                    #engineerId="ngModel"
+                    [(ngModel)]= "engineer.engineerId"
+                    [ngClass]= "{'is-invalid':engineerId?.errors && (engineerId?.touched || engineerId?.dirty),
+                                    'is-valid':engineerId?.valid}">
+            <div class="invalid-feedback">
+                <strong *ngIf= "engineerId?.errors?.required">engineer Id is required</strong>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="password">password</label>
+            <input type="text" name="password" class="form-control" 
+                  placeholder="Enter the password" 
+                  required [(ngModel)]= "engineer.password" #password="ngModel"
+                  [ngClass]= "{'is-invalid':password?.errors && (password?.touched || password?.dirty),
+                  'is-valid':password?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "password?.errors?.required">password is required</strong>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="engineerName">engineer name</label>
+            <input type="text" name="engineerName" class="form-control" 
+                  placeholder="Enter the engineer name" required 
+                  [(ngModel)]= "engineer.engineerName" #engineerName="ngModel"
+                  [ngClass]= "{'is-invalid':engineerName?.errors && (engineerName?.touched || engineerName?.dirty),
+                  'is-valid':engineerName?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "engineerName?.errors?.required">engineer Name is required</strong>
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="domain">domain</label>
+            <input type="text" name="domain" class="form-control" 
+                  placeholder="Enter the domain" required 
+                  [(ngModel)]= "engineer.domain" #domain="ngModel"
+                  [ngClass]= "{'is-invalid':domain?.errors && (domain?.touched || domain?.dirty),
+                  'is-valid':domain?.valid}">
+                  <div class="invalid-feedback">
+                    <strong *ngIf= "domain?.errors?.required">engineer doamin is required</strong>
+                </div>
+        </div>
+        <button type="submit" class="btn btn-success" (click)= "onSubmit()" [disabled]= "addengineerForm.invalid">Add engineer</button>
+        <button type="submit" class="btn btn-default" (click)= "addengineerForm.reset()">Reset</button>
+    </form>
